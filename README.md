@@ -1,6 +1,6 @@
 # VS Code Micropub Publisher
 
-A Visual Studio Code extension for publishing posts to micro.blog (or any Micropub-enabled site) directly from your editor.
+A Visual Studio Code extension for publishing posts to micro.blog (or any Micropub-enabled site) directly from your editor. All code (and most of this README) was created by Claude.ai. I'm just the idea guy.
 
 ## Prerequisites
 
