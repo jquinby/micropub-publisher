@@ -1,0 +1,60 @@
+{
+    "name": "micropub-publisher",
+    "displayName": "Micropub Publisher",
+    "description": "Publish posts to micro.blog via Micropub API",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.96.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [{
+            "command": "micropub.publish",
+            "title": "Publish to Micro.blog"
+        }],
+        "configuration": {
+            "title": "Micropub Publisher",
+            "properties": {
+                "micropub.token": {
+                    "type": "string",
+                    "description": "Micropub access token"
+                },
+                "micropub.endpoint": {
+                    "type": "string",
+                    "description": "Micropub endpoint URL"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run package",
+        "compile": "webpack",
+        "watch": "webpack --watch",
+        "package": "webpack --mode production --devtool hidden-source-map",
+        "compile-tests": "tsc -p . --outDir out",
+        "watch-tests": "tsc -p . -w --outDir out",
+        "pretest": "npm run compile-tests && npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.80.0",
+        "@types/node": "16.x",
+        "@typescript-eslint/eslint-plugin": "^6.4.1",
+        "@typescript-eslint/parser": "^6.4.1",
+        "eslint": "^8.47.0",
+        "typescript": "^5.1.6",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4",
+        "ts-loader": "^9.4.4",
+        "@vscode/test-electron": "^2.3.4"
+    },
+    "dependencies": {
+        "node-fetch": "^2.6.1"
+    }
+}
+
